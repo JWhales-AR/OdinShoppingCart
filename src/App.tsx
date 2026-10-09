@@ -3,11 +3,11 @@ import Footer from "./components/common/Footer";
 
 function App() {
   return (
-    <>
+    <div>
       <NavBar />
       <main></main>
       <Footer />
-    </>
+    </div>
   );
 }
 

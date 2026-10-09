@@ -3,13 +3,13 @@
     --ft-color-fg: hsl(var(--color-primary-100));
     --ft-hover-accent: hsl(var(--color-accent-100) / 30%);
 
-    &.dark {
-        --ft-color-bg: hsl(var(--color-secondary-70));
-        --ft-color-fg: hsl(var(--color-primary-100));
-    }
-
     background-color: var(--ft-color-bg);
     color: var(--ft-color-fg);
     padding-block: 0.4rem;
     padding-inline: 0.6rem;
+}
+
+*[class*="dark"] .footer {
+    --ft-color-bg: hsl(var(--color-secondary-70));
+    --ft-color-fg: hsl(var(--color-primary-100));
 }
