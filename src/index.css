@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="mail"],
+input[type="url"],
+input[type="password"],
+textarea,
+button {
+    appearance: none;
+}
+
+:root {
+    --color-secondary-hue: 0;
+    --color-secondary-70: var(--color-secondary-hue) 0% 15%;
+    --color-secondary-100: var(--color-secondary-hue) 0% 0%;
+
+    --color-primary-hue: 0;
+    --color-primary-100: var(--color-primary-hue) 0% 100%;
+
+    --color-accent-hue: 185;
+    --color-accent-50: var(--color-accent-hue) 87.6% 77.9%;
+    --color-accent-100: var(--color-accent-hue) 76.8% 50%;
+    --color-accent-150: calc(var(--color-accent-hue) + 20) 71% 52%;
+}

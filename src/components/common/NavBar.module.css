@@ -1,0 +1,43 @@
+.navbar {
+    --nb-color-bg: hsl(var(--color-accent-150));
+    --nb-color-fg: hsl(var(--color-primary-100));
+    --nb-hover-accent: hsl(var(--color-accent-100) / 30%);
+
+    &.dark {
+        --nb-color-bg: hsl(var(--color-secondary-70));
+        --nb-color-fg: hsl(var(--color-primary-100));
+    }
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--nb-color-bg);
+    color: var(--nb-color-fg);
+    padding-block: 0.4rem;
+    padding-inline: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-link-list {
+    list-style: none;
+    display: flex;
+    gap: 0.425rem;
+}
+
+.navbar-link-item {
+    display: grid;
+    place-items: center;
+    padding: 0.3rem;
+    border-radius: 100%;
+
+    &:hover {
+        background-color: var(--nb-hover-accent);
+    }
+
+    & svg {
+        width: 22px;
+        height: 22px;
+    }
+}

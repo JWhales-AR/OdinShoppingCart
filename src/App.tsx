@@ -1,9 +1,14 @@
-import { useState } from "react";
+import NavBar from "./components/common/NavBar";
+import Footer from "./components/common/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <>Hello World</>;
+  return (
+    <>
+      <NavBar />
+      <main></main>
+      <Footer />
+    </>
+  );
 }
 
 export default App;

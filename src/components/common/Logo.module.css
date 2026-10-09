@@ -1,0 +1,12 @@
+.logo-bold,
+.logo-light {
+    font-size: 1.4rem;
+}
+
+.logo-bold {
+    font-weight: bold;
+}
+
+.logo-light {
+    font-weight: lighter;
+}
