@@ -1,0 +1,29 @@
+.hero {
+    --h-color-bg: hsl(var(--color-primary-100));
+    --h-color-fg: hsl(var(--color-accent-150));
+
+    min-height: 100vh;
+    display: flex;
+    direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--h-color-bg);
+    color: var(--h-color-fg);
+}
+
+*[class*="dark"] .hero {
+    --h-color-bg: hsl(var(--color-secondary-70));
+    --h-color-fg: hsl(var(--color-primary-100));
+}
+
+.hero-banner-container {
+    & p:first-child {
+        font-size: 32pt;
+        font-weight: bold;
+        font-family: "Isometra", serif;
+        margin-bottom: 0.6rem;
+    }
+
+    text-align: center;
+    font-size: 1.2rem;
+}
