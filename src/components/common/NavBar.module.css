@@ -41,3 +41,9 @@
         height: 22px;
     }
 }
+
+.navbar-logo-theme-toggle-button {
+    background-color: transparent;
+    border: none;
+    color: var(--nb-color-fg)
+}
