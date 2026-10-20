@@ -2,6 +2,15 @@ import styles from "./App.module.css";
 import NavBar from "./components/common/NavBar";
 import Footer from "./components/common/Footer";
 import { useTheme } from "./context/ThemeContext";
+import { Link } from "react-router";
+
+function ShoppingRedirectLink() {
+  return (
+    <Link className={styles.heroShoppingRedirectLink} to="#">
+      Shop Now
+    </Link>
+  );
+}
 
 function Hero() {
   return (
@@ -9,7 +18,9 @@ function Hero() {
       <div className={styles.heroBannerContainer}>
         <p>THE FAKE MARKET</p>
         <p>The single stop for none of your wants</p>
+        <ShoppingRedirectLink />
       </div>
+      <div className={styles.heroBgImage}></div>
     </div>
   );
 }

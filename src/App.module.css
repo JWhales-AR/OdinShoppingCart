@@ -2,6 +2,7 @@
     --h-color-bg: hsl(var(--color-primary-100));
     --h-color-fg: hsl(var(--color-accent-150));
 
+    position: relative;
     min-height: 100vh;
     display: flex;
     direction: column;
@@ -21,9 +22,50 @@
         font-size: 32pt;
         font-weight: bold;
         font-family: "Isometra", serif;
-        margin-bottom: 0.6rem;
     }
 
     text-align: center;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.80;
+    z-index: 1;
+}
+
+.hero-shopping-redirect-link {
+    text-decoration: none;
+    color: var(--h-color-bg);
+    background-color: var(--h-color-fg);
+    padding-block: 0.3rem;
+    padding-inline: 1.2rem;
+    border-radius: 64pt;
+    margin-top: 0.8rem;
+
+    &:hover {
+        box-shadow: 3px 3px 10px -3px var(--h-color-fg);
+    }
+}
+
+.hero-bg-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: center / cover no-repeat url("./assets/shopping-carts-pexels.jpg");
+    opacity: 0.15;
+}
+
+@media (width >= 480px) {
+    .hero-bg-image {
+        width: 45%;
+        opacity: 0.4;
+    }
+
+    .hero-banner-container {
+        opacity: 1;
+    }
 }
