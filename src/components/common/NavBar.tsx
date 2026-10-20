@@ -20,16 +20,16 @@ export default function NavBar() {
       <nav>
         <ul className={styles.navbarLinkList}>
           <Link to="/">
-            <li className={styles.navbarLinkItem}>
+            <li aria-label="nav-home-page" className={styles.navbarLinkItem}>
               <HomeSvg />
             </li>
           </Link>
           <Link to="/shopping">
-            <li className={styles.navbarLinkItem}>
+            <li aria-label="nav-shop-page" className={styles.navbarLinkItem}>
               <SearchSvg />
             </li>
           </Link>
-          <li className={styles.navbarLinkItem}>
+          <li aria-label="nav-cart-page" className={styles.navbarLinkItem}>
             <ShoppingCartSvg />
           </li>
         </ul>

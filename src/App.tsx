@@ -12,7 +12,7 @@ function ShoppingRedirectLink() {
   );
 }
 
-function Hero() {
+export function Hero() {
   return (
     <div className={styles.hero}>
       <div className={styles.heroBannerContainer}>
