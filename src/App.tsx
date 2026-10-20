@@ -6,7 +6,7 @@ import { Link } from "react-router";
 
 function ShoppingRedirectLink() {
   return (
-    <Link className={styles.heroShoppingRedirectLink} to="#">
+    <Link className={styles.heroShoppingRedirectLink} to="/shopping">
       Shop Now
     </Link>
   );

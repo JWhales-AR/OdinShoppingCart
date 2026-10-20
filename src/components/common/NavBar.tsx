@@ -4,6 +4,7 @@ import ShoppingCartSvg from "../../assets/shopping-cart.svg?react";
 import HomeSvg from "../../assets/home.svg?react";
 import Logo from "./Logo";
 import { useTheme } from "../../context/ThemeContext";
+import { Link } from "react-router";
 
 export default function NavBar() {
   const { toggleTheme } = useTheme();
@@ -18,12 +19,16 @@ export default function NavBar() {
       </button>
       <nav>
         <ul className={styles.navbarLinkList}>
-          <li className={styles.navbarLinkItem}>
-            <HomeSvg />
-          </li>
-          <li className={styles.navbarLinkItem}>
-            <SearchSvg />
-          </li>
+          <Link to="/">
+            <li className={styles.navbarLinkItem}>
+              <HomeSvg />
+            </li>
+          </Link>
+          <Link to="/shopping">
+            <li className={styles.navbarLinkItem}>
+              <SearchSvg />
+            </li>
+          </Link>
           <li className={styles.navbarLinkItem}>
             <ShoppingCartSvg />
           </li>

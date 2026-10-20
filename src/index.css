@@ -20,6 +20,7 @@ button {
     --color-secondary-hue: 0;
     --color-secondary-70: var(--color-secondary-hue) 0% 15%;
     --color-secondary-100: var(--color-secondary-hue) 0% 0%;
+    --color-secondary-200: var(--color-secondary-hue) 0% 31.4%;
 
     --color-primary-hue: 0;
     --color-primary-100: var(--color-primary-hue) 0% 100%;

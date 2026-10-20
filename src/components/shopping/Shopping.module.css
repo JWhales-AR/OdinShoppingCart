@@ -1,0 +1,34 @@
+.products-pager {
+    --pp-color-bg: hsl(var(--color-primary-100));
+    --pp-color-fg: hsl(var(--color-accent-150));
+    --pp-color-card-bg: hsl(var(--color-primary-100));
+    --pp-color-card-border: var(--pp-color-fg);
+
+    min-height: 100vh;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    background-color: var(--pp-color-bg);
+    gap: 2rem;
+}
+
+@media (width >= 900px) {
+    .products-pager {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+*[class*="dark"] .products-pager {
+    --pp-color-bg: hsl(var(--color-secondary-200));
+    --pp-color-fg: hsl(var(--color-primary-100));
+    --pp-color-card-bg: hsl(var(--color-secondary-100));
+    --pp-color-card-border: var(--pp-color-card-bg);
+}
+
+.product-card {
+    background-color: var(--pp-color-card-bg);
+    color: var(--pp-color-fg);
+    padding: 2rem;
+    border: 2pt solid var(--pp-color-card-border);
+    border-radius: 8pt;
+}
