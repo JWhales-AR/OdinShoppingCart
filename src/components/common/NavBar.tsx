@@ -19,18 +19,20 @@ export default function NavBar() {
       </button>
       <nav>
         <ul className={styles.navbarLinkList}>
-          <Link to="/">
-            <li aria-label="nav-home-page" className={styles.navbarLinkItem}>
+          <li className={styles.navbarLinkItem}>
+            <Link aria-label="nav-home-page" to="/">
               <HomeSvg />
-            </li>
-          </Link>
-          <Link to="/shopping">
-            <li aria-label="nav-shop-page" className={styles.navbarLinkItem}>
+            </Link>
+          </li>
+          <li className={styles.navbarLinkItem}>
+            <Link aria-label="nav-shop-page" to="/shopping">
               <SearchSvg />
-            </li>
-          </Link>
-          <li aria-label="nav-cart-page" className={styles.navbarLinkItem}>
-            <ShoppingCartSvg />
+            </Link>
+          </li>
+          <li className={styles.navbarLinkItem}>
+            <Link aria-label="nav-cart-page" to="#">
+              <ShoppingCartSvg />
+            </Link>
           </li>
         </ul>
       </nav>

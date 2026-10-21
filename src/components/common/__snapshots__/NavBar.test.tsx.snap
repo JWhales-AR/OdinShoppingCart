@@ -38,13 +38,13 @@ exports[`NavBar component > matches snapshot 1`] = `
       <ul
         class="_navbarLinkList_70f3a2"
       >
-        <a
-          data-discover="true"
-          href="/"
+        <li
+          class="_navbarLinkItem_70f3a2"
         >
-          <li
+          <a
             aria-label="nav-home-page"
-            class="_navbarLinkItem_70f3a2"
+            data-discover="true"
+            href="/"
           >
             <svg
               fill="#e3e3e3"
@@ -57,15 +57,15 @@ exports[`NavBar component > matches snapshot 1`] = `
                 d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
               />
             </svg>
-          </li>
-        </a>
-        <a
-          data-discover="true"
-          href="/shopping"
+          </a>
+        </li>
+        <li
+          class="_navbarLinkItem_70f3a2"
         >
-          <li
+          <a
             aria-label="nav-shop-page"
-            class="_navbarLinkItem_70f3a2"
+            data-discover="true"
+            href="/shopping"
           >
             <svg
               fill="#e3e3e3"
@@ -78,23 +78,28 @@ exports[`NavBar component > matches snapshot 1`] = `
                 d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
               />
             </svg>
-          </li>
-        </a>
+          </a>
+        </li>
         <li
-          aria-label="nav-cart-page"
           class="_navbarLinkItem_70f3a2"
         >
-          <svg
-            fill="#e3e3e3"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            xmlns="http://www.w3.org/2000/svg"
+          <a
+            aria-label="nav-cart-page"
+            data-discover="true"
+            href="/"
           >
-            <path
-              d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
-            />
-          </svg>
+            <svg
+              fill="#e3e3e3"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"
+              />
+            </svg>
+          </a>
         </li>
       </ul>
     </nav>

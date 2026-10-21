@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [react(), svgr()],
   test: {
     environment: "jsdom",
+    globals: true,
+    setupFiles: ["./vitest-setup.ts"],
   },
   css: {
     modules: {

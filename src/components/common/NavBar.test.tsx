@@ -20,6 +20,21 @@ describe("NavBar component", () => {
     render(<RouterProvider router={router} />);
     expect(screen.getByRole("button").textContent).toEqual("ROSEGRIDALEX");
   });
+
+  it("renders the required nav buttons", () => {
+    const router = createMemoryRouter([
+      { path: "/", element: <NavBarWrapper /> },
+    ]);
+    render(<RouterProvider router={router} />);
+    for (const linkName of [
+      "nav-home-page",
+      "nav-shop-page",
+      "nav-cart-page",
+    ]) {
+      expect(screen.getByRole("link", { name: linkName })).toBeInTheDocument();
+    }
+  });
+
   it("matches snapshot", () => {
     const router = createMemoryRouter([
       { path: "/", element: <NavBarWrapper /> },
