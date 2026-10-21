@@ -17,28 +17,35 @@ function ProductAddToCart() {
   return <button className={styles.addToCartButton}>Add to Cart</button>;
 }
 
-type ProductCardProps = { title: string };
-export default function ProductCard({ title }: ProductCardProps) {
+export type ProductType = {
+  title: string;
+  imgSrc?: string;
+  category: string;
+  description: string;
+  price: number;
+};
+export default function ProductCard({ product }: { product: ProductType }) {
+  const formattedPrice = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(product.price);
+
   return (
     <div className={styles.productCard}>
       <div className={styles.productDisplayContainer}>
         <img
           className={styles.productImage}
-          src={ChandelierImg}
-          alt={`Product ${title} Image`}
+          src={product.imgSrc || ChandelierImg}
+          alt={`Product ${product.title} Image`}
         ></img>
-        <p className={styles.productCategory}>Product Category</p>
+        <p className={styles.productCategory}>{product.category}</p>
       </div>
       <div className={styles.productAboutContainer}>
-        <p className={styles.productAboutTitle}>{title}</p>
-        <p className={styles.productAboutDescription}>
-          Justo, laoreet sit amet cursus sit amet, dictum sit amet justo donec
-          enim diam, vulputate ut. Blandit volutpat maecenas volutpat blandit
-          aliquam etiam erat velit, scelerisque in dictum non, consectetur.
-        </p>
+        <p className={styles.productAboutTitle}>{product.title}</p>
+        <p className={styles.productAboutDescription}>{product.description}</p>
       </div>
       <div className={styles.productPriceCartContainer}>
-        <p>$69,999</p>
+        <p>{formattedPrice}</p>
         <div className={styles.productCartControlContainer}>
           <ProductQuantityInput />
           <ProductAddToCart />
