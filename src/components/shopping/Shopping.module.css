@@ -1,3 +1,4 @@
+.loading-container,
 .products-pager {
     --pp-color-bg: hsl(var(--color-primary-100));
     --pp-color-fg: hsl(var(--color-accent-150));
@@ -20,6 +21,7 @@
     }
 }
 
+*[class*="dark"] .loading-container,
 *[class*="dark"] .products-pager {
     --pp-color-bg: hsl(var(--color-secondary-200));
     --pp-color-fg: hsl(var(--color-primary-100));
@@ -130,4 +132,11 @@ button.add-to-cart-button {
     border: none;
     background-color: var(--pp-color-fg-sub);
     color: hsl(var(--color-primary-100))
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pp-color-fg);
 }

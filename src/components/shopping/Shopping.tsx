@@ -1,24 +1,26 @@
 import styles from "./Shopping.module.css";
 import NavBar from "../common/NavBar";
 import Footer from "../common/Footer";
-import ProductCard, { type ProductType } from "./ProductCard";
+import ProductCard from "./ProductCard";
 import { useTheme } from "../../context/ThemeContext";
+import useFakeStoreProducts from "./FakeStore";
 
 function ProductsPager() {
+  const { loading, products } = useFakeStoreProducts();
+
+  if (loading) {
+    return (
+      <div className={styles.loadingContainer}>
+        <p>Loading Products, Please Wait</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.productsPager}>
-      {Array.from(Array(5)).map((_, i) => {
-        const product: ProductType = {
-          title: `Product #${i + 1}`,
-          category: "Product Category",
-          description:
-            "Justo, laoreet sit amet cursus sit amet, dictum sit amet justo donec" +
-            "enim diam, vulputate ut. Blandit volutpat maecenas volutpat",
-          price: 69999,
-        };
-
-        return <ProductCard key={i} product={product} />;
-      })}
+      {products?.map((product) => (
+        <ProductCard key={product.title} product={product} />
+      ))}
     </div>
   );
 }
