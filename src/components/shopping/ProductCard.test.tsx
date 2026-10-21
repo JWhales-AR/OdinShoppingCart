@@ -21,7 +21,7 @@ function ProductCardWrapper() {
 }
 
 describe("Product Card", () => {
-  it.skip("matches the snapshot", () => {
+  it("matches the snapshot", () => {
     const { container } = render(<ProductCardWrapper />);
     expect(container).toMatchSnapshot();
   });
@@ -31,24 +31,24 @@ describe("Product Quantity Input", () => {
   it("increments item quantity on click", async () => {
     const user = userEvent.setup();
     render(<ProductCardWrapper />);
-    const productQuantity = screen.getByRole("textbox", {
+    const productQuantity: HTMLInputElement = screen.getByRole("textbox", {
       name: "product-quantity",
     });
-    expect(Number(productQuantity.ariaValueNow)).toEqual(0);
+    expect(Number(productQuantity.value)).toEqual(0);
     const button = screen.getByRole("button", { name: "cart-increment" });
     await user.click(button);
-    expect(Number(productQuantity.ariaValueNow)).toEqual(1);
+    expect(Number(productQuantity.value)).toEqual(1);
   });
 
   it("does not decrement below 0", async () => {
     const user = userEvent.setup();
     render(<ProductCardWrapper />);
-    const productQuantity = screen.getByRole("textbox", {
-      name: "product-label",
+    const productQuantity: HTMLInputElement = screen.getByRole("textbox", {
+      name: "product-quantity",
     });
-    expect(Number(productQuantity.ariaValueNow)).toEqual(0);
+    expect(Number(productQuantity.value)).toEqual(0);
     const button = screen.getByRole("button", { name: "cart-decrement" });
     await user.click(button);
-    expect(Number(productQuantity.ariaValueNow)).toEqual(0);
+    expect(Number(productQuantity.value)).toEqual(0);
   });
 });

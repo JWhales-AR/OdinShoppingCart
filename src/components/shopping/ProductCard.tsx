@@ -1,15 +1,49 @@
 import styles from "./Shopping.module.css";
 import ChandelierImg from "../../assets/chandelier-pexels.jpg";
+import {
+  useState,
+  type ChangeEventHandler,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 
-function ProductQuantityInput() {
+type ProductQuantityProps = {
+  quantity: number;
+  setQuantity: Dispatch<SetStateAction<number>>;
+};
+function ProductQuantityInput({ quantity, setQuantity }: ProductQuantityProps) {
+  const fixNumber = (x: number) =>
+    isNaN(x) ? 0 : Math.max(0, Math.min(x, 999));
+
+  const handleChange: ChangeEventHandler = (e) => {
+    const newValue = Number((e.target as HTMLTextAreaElement).value);
+    setQuantity(fixNumber(newValue));
+  };
+
   return (
-    <input
-      type="number"
-      min={0}
-      max={999}
-      defaultValue={0}
-      className={styles.productQuantityInput}
-    ></input>
+    <div className={styles.productQuantityInputContainer}>
+      <button
+        aria-label="cart-decrement"
+        className={styles.productQuantityDecrButton}
+        onClick={() => setQuantity((prev) => fixNumber(prev - 1))}
+      >
+        -
+      </button>
+      <input
+        aria-label="product-quantity"
+        type="text"
+        className={styles.productQuantityInput}
+        value={quantity}
+        onChange={handleChange}
+      ></input>
+      <button
+        aria-label="cart-increment"
+        className={styles.productQuantityIncrButton}
+        onClick={() => setQuantity((prev) => fixNumber(prev + 1))}
+      >
+        +
+      </button>
+    </div>
   );
 }
 
@@ -30,6 +64,8 @@ export default function ProductCard({ product }: { product: ProductType }) {
     currency: "USD",
   }).format(product.price);
 
+  const [quantity, setQuantity] = useState<number>(0);
+
   return (
     <div className={styles.productCard}>
       <div className={styles.productDisplayContainer}>
@@ -47,7 +83,7 @@ export default function ProductCard({ product }: { product: ProductType }) {
       <div className={styles.productPriceCartContainer}>
         <p>{formattedPrice}</p>
         <div className={styles.productCartControlContainer}>
-          <ProductQuantityInput />
+          <ProductQuantityInput quantity={quantity} setQuantity={setQuantity} />
           <ProductAddToCart />
         </div>
       </div>
