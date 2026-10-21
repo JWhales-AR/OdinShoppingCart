@@ -1,21 +1,8 @@
 import styles from "./Shopping.module.css";
 import NavBar from "../common/NavBar";
 import Footer from "../common/Footer";
+import ProductCard from "./ProductCard";
 import { useTheme } from "../../context/ThemeContext";
-
-type ProductCardProps = { title: string };
-function ProductCard({ title }: ProductCardProps) {
-  return (
-    <div className={styles.productCard}>
-      <p>{title}</p>
-      <p>
-        Justo, laoreet sit amet cursus sit amet, dictum sit amet justo donec
-        enim diam, vulputate ut. Blandit volutpat maecenas volutpat blandit
-        aliquam etiam erat velit, scelerisque in dictum non, consectetur.
-      </p>
-    </div>
-  );
-}
 
 function ProductsPager() {
   return (
