@@ -1,22 +1,22 @@
 .cart-pager {
-    --cp-color-bg: hsl(var(--color-primary-100));
-    --cp-color-fg: hsl(var(--color-accent-150));
-    --cp-color-card-bg: hsl(var(--color-primary-100));
-    --cp-color-fg-sub: hsl(var(--color-accent-100));
-    --cp-color-fg-alter: var(--cp-color-fg);
-    --cp-color-shadow: var(--cp-color-fg);
+    --color-bg: hsl(var(--color-primary-100));
+    --color-fg: hsl(var(--color-accent-150));
+    --color-card-bg: hsl(var(--color-primary-100));
+    --color-fg-sub: hsl(var(--color-accent-100));
+    --color-fg-alter: var(--color-fg);
+    --color-shadow: var(--color-fg);
 
     min-height: 100vh;
     padding: 1.5rem;
-    background-color: var(--cp-color-bg);
-    color: var(--cp-color-fg);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
 }
 
 *[class*="dark"] .cart-pager {
-    --cp-color-bg: hsl(var(--color-secondary-200));
-    --cp-color-fg: hsl(var(--color-primary-100));
-    --cp-color-card-bg: hsl(var(--color-secondary-100));
-    --cp-color-fg-sub: hsl(var(--color-secondary-200));
-    --cp-color-fg-alter: hsl(var(--color-secondary-100));
-    --cp-color-shadow: var(--cp-color-card-bg);
+    --color-bg: hsl(var(--color-secondary-200));
+    --color-fg: hsl(var(--color-primary-100));
+    --color-card-bg: hsl(var(--color-secondary-100));
+    --color-fg-sub: hsl(var(--color-secondary-200));
+    --color-fg-alter: hsl(var(--color-secondary-100));
+    --color-shadow: var(--color-card-bg);
 }

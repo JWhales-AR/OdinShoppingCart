@@ -1,17 +1,17 @@
 .loading-container,
 .products-pager {
-    --pp-color-bg: hsl(var(--color-primary-100));
-    --pp-color-fg: hsl(var(--color-accent-150));
-    --pp-color-card-bg: hsl(var(--color-primary-100));
-    --pp-color-fg-sub: hsl(var(--color-accent-100));
-    --pp-color-fg-alter: var(--pp-color-fg);
-    --pp-color-shadow: var(--pp-color-fg);
+    --color-bg: hsl(var(--color-primary-100));
+    --color-fg: hsl(var(--color-accent-150));
+    --color-card-bg: hsl(var(--color-primary-100));
+    --color-fg-sub: hsl(var(--color-accent-100));
+    --color-fg-alter: var(--color-fg);
+    --color-shadow: var(--color-fg);
 
     min-height: 100vh;
     padding: 1.5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    background-color: var(--pp-color-bg);
+    background-color: var(--color-bg);
     gap: 2rem;
 }
 
@@ -23,23 +23,23 @@
 
 *[class*="dark"] .loading-container,
 *[class*="dark"] .products-pager {
-    --pp-color-bg: hsl(var(--color-secondary-200));
-    --pp-color-fg: hsl(var(--color-primary-100));
-    --pp-color-card-bg: hsl(var(--color-secondary-100));
-    --pp-color-fg-sub: hsl(var(--color-secondary-200));
-    --pp-color-fg-alter: hsl(var(--color-secondary-100));
-    --pp-color-shadow: var(--pp-color-card-bg);
+    --color-bg: hsl(var(--color-secondary-200));
+    --color-fg: hsl(var(--color-primary-100));
+    --color-card-bg: hsl(var(--color-secondary-100));
+    --color-fg-sub: hsl(var(--color-secondary-200));
+    --color-fg-alter: hsl(var(--color-secondary-100));
+    --color-shadow: var(--color-card-bg);
 }
 
 .product-card {
-    background-color: var(--pp-color-card-bg);
-    color: var(--pp-color-fg);
+    background-color: var(--color-card-bg);
+    color: var(--color-fg);
     border-radius: 8pt;
     aspect-ratio: 0.7;
     display: grid;
     grid-template-rows: 60% 2fr 1fr;
     gap: 0.685rem;
-    box-shadow: 1pt 2pt 6pt -3pt var(--pp-color-shadow);
+    box-shadow: 1pt 2pt 6pt -3pt var(--color-shadow);
 }
 
 .product-display-container {
@@ -56,8 +56,8 @@
     position: absolute;
     left: 3%;
     bottom: 3%;
-    color: var(--pp-color-bg);
-    background-color: var(--pp-color-fg);
+    color: var(--color-bg);
+    background-color: var(--color-fg);
     padding-block: 0.2rem;
     padding-inline: 0.6rem;
 }
@@ -75,7 +75,7 @@
 
 .product-about-description {
     font-size: 0.765rem;
-    color: var(--pp-color-fg-sub)
+    color: var(--color-fg-sub)
 }
 
 .product-price-cart-container {
@@ -98,9 +98,9 @@
 button.product-quantity-incr-button,
 button.product-quantity-decr-button {
     width: 1.6rem;
-    background-color: var(--pp-color-fg-sub);
+    background-color: var(--color-fg-sub);
     border: none;
-    border: 1pt solid var(--pp-color-fg-sub);
+    border: 1pt solid var(--color-fg-sub);
     color: hsl(var(--color-primary-100));
     font-weight: 700;
 }
@@ -115,11 +115,11 @@ button.product-quantity-decr-button {
 
 input.product-quantity-input {
     width: 6ch;
-    border: 1pt solid var(--pp-color-fg-sub);
+    border: 1pt solid var(--color-fg-sub);
     text-align: center;
     padding-block: 0.3rem;
     padding-inline: 0.4rem;
-    color: var(--pp-color-fg-alter);
+    color: var(--color-fg-alter);
 }
 
 button.add-to-cart-button {
@@ -130,7 +130,7 @@ button.add-to-cart-button {
     text-wrap: nowrap;
     border-radius: 4pt;
     border: none;
-    background-color: var(--pp-color-fg-sub);
+    background-color: var(--color-fg-sub);
     color: hsl(var(--color-primary-100))
 }
 
@@ -138,5 +138,5 @@ button.add-to-cart-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--pp-color-fg);
+    color: var(--color-fg);
 }
