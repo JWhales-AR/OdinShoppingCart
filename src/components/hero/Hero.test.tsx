@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { Hero } from "./App";
+import Hero from "./Hero";
 import { createMemoryRouter, RouterProvider } from "react-router";
 
 describe("App component", () => {

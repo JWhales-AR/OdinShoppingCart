@@ -1,6 +1,4 @@
 import styles from "./Shopping.module.css";
-import NavBar from "../common/NavBar";
-import Footer from "../common/Footer";
 import ProductCard from "./ProductCard";
 import { useTheme } from "../../context/ThemeContext";
 import useFakeStoreProducts from "./FakeStore";
@@ -30,9 +28,7 @@ export default function Shopping() {
 
   return (
     <div className={`${isDarkMode && "dark"}`}>
-      <NavBar />
       <ProductsPager />
-      <Footer />
     </div>
   );
 }
