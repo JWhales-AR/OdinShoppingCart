@@ -35,7 +35,7 @@ export default function NavBar({
           </li>
           <li className={styles.navbarLinkItem}>
             <div className={styles.navbarCartLinkWrapper}>
-              <Link aria-label="nav-cart-page" to="#">
+              <Link aria-label="nav-cart-page" to="/cart">
                 <ShoppingCartSvg />
               </Link>
               <p className={styles.navbarCartItemCount}>{cartItemCount}</p>

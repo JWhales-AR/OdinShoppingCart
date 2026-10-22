@@ -89,7 +89,7 @@ exports[`NavBar component > matches snapshot 1`] = `
             <a
               aria-label="nav-cart-page"
               data-discover="true"
-              href="/"
+              href="/cart"
             >
               <svg
                 fill="#e3e3e3"
