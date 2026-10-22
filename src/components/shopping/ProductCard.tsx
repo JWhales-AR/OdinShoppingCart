@@ -13,7 +13,7 @@ type ProductQuantityProps = {
 };
 function ProductQuantityInput({ quantity, setQuantity }: ProductQuantityProps) {
   const fixNumber = (x: number) =>
-    isNaN(x) ? 0 : Math.max(0, Math.min(x, 999));
+    isNaN(x) ? 1 : Math.max(1, Math.min(x, 999));
 
   const handleChange: ChangeEventHandler = (e) => {
     const newValue = Number((e.target as HTMLTextAreaElement).value);
@@ -64,7 +64,7 @@ export default function ProductCard({ product }: { product: ProductType }) {
     currency: "USD",
   }).format(product.price);
 
-  const [quantity, setQuantity] = useState<number>(0);
+  const [quantity, setQuantity] = useState<number>(1);
 
   return (
     <div className={styles.productCard}>

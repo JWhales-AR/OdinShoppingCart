@@ -28,27 +28,37 @@ describe("Product Card", () => {
 });
 
 describe("Product Quantity Input", () => {
+  it("has default value of 1", () => {
+    render(<ProductCardWrapper />);
+    const productQuantity: HTMLInputElement = screen.getByRole("textbox", {
+      name: "product-quantity",
+    });
+    expect(Number(productQuantity.value)).toEqual(1);
+  });
+
   it("increments item quantity on click", async () => {
     const user = userEvent.setup();
     render(<ProductCardWrapper />);
     const productQuantity: HTMLInputElement = screen.getByRole("textbox", {
       name: "product-quantity",
     });
-    expect(Number(productQuantity.value)).toEqual(0);
+    expect(Number(productQuantity.value)).toEqual(1);
     const button = screen.getByRole("button", { name: "cart-increment" });
     await user.click(button);
-    expect(Number(productQuantity.value)).toEqual(1);
+    expect(Number(productQuantity.value)).toEqual(2);
   });
 
-  it("does not decrement below 0", async () => {
+  it("does not decrement below 1", async () => {
     const user = userEvent.setup();
     render(<ProductCardWrapper />);
     const productQuantity: HTMLInputElement = screen.getByRole("textbox", {
       name: "product-quantity",
     });
-    expect(Number(productQuantity.value)).toEqual(0);
+    expect(Number(productQuantity.value)).toEqual(1);
     const button = screen.getByRole("button", { name: "cart-decrement" });
     await user.click(button);
-    expect(Number(productQuantity.value)).toEqual(0);
+    await user.click(button);
+    await user.click(button);
+    expect(Number(productQuantity.value)).toEqual(1);
   });
 });

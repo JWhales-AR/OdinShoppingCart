@@ -56,7 +56,7 @@ exports[`Product Card > matches the snapshot 1`] = `
               aria-label="product-quantity"
               class="_productQuantityInput_e5e3e5"
               type="text"
-              value="0"
+              value="1"
             />
             <button
               aria-label="cart-increment"
