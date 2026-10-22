@@ -7,6 +7,7 @@ import { createMemoryRouter, RouterProvider, Outlet } from "react-router";
 
 function ProductCardWrapper() {
   const dummyProduct: ProductType = {
+    id: 1,
     title: "Product Dummy",
     category: "Category Dummy",
     description:

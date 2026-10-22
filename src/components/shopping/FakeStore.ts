@@ -2,6 +2,7 @@ import type { ProductType } from "./ProductCard";
 import { useState, useEffect } from "react";
 
 type FakeStoreProductObjectType = {
+  id: number;
   title: string;
   price: number;
   description: string;

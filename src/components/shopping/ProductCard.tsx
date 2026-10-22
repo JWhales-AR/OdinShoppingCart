@@ -64,13 +64,14 @@ function ProductAddToCart({ quantity, setQuantity }: ProductQuantityProps) {
   );
 }
 
-export type ProductType = {
+export interface ProductType {
+  id: number;
   title: string;
   imgSrc?: string;
   category: string;
   description: string;
   price: number;
-};
+}
 export default function ProductCard({ product }: { product: ProductType }) {
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",

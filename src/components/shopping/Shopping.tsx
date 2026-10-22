@@ -17,7 +17,7 @@ function ProductsPager() {
   return (
     <div className={styles.productsPager}>
       {products?.map((product) => (
-        <ProductCard key={product.title} product={product} />
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
