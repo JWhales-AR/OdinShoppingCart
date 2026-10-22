@@ -7,12 +7,13 @@ import {
   type SetStateAction,
 } from "react";
 import type { CartItemContextType } from "../../App";
+import CartStorage from "../cart/CartStorage";
 import { useOutletContext } from "react-router";
 
-type ProductQuantityProps = {
+interface ProductQuantityProps {
   quantity: number;
   setQuantity: Dispatch<SetStateAction<number>>;
-};
+}
 function ProductQuantityInput({ quantity, setQuantity }: ProductQuantityProps) {
   const fixNumber = (x: number) =>
     isNaN(x) ? 1 : Math.max(1, Math.min(x, 999));
@@ -49,13 +50,21 @@ function ProductQuantityInput({ quantity, setQuantity }: ProductQuantityProps) {
   );
 }
 
-function ProductAddToCart({ quantity, setQuantity }: ProductQuantityProps) {
+interface ProductAddToCartProps extends ProductQuantityProps {
+  product: ProductType;
+}
+function ProductAddToCart({
+  product,
+  quantity,
+  setQuantity,
+}: ProductAddToCartProps) {
   const { incrCartItemCount } = useOutletContext<CartItemContextType>();
   return (
     <button
       className={styles.addToCartButton}
       onClick={() => {
         incrCartItemCount(quantity);
+        new CartStorage().addProduct({ ...product, quantity }, true);
         setQuantity(1);
       }}
     >
@@ -85,7 +94,7 @@ export default function ProductCard({ product }: { product: ProductType }) {
       <div className={styles.productDisplayContainer}>
         <img
           className={styles.productImage}
-          src={product.imgSrc || ChandelierImg}
+          src={product.imgSrc ?? ChandelierImg}
           alt={`Product ${product.title} Image`}
         ></img>
         <p className={styles.productCategory}>{product.category}</p>
@@ -98,7 +107,11 @@ export default function ProductCard({ product }: { product: ProductType }) {
         <p>{formattedPrice}</p>
         <div className={styles.productCartControlContainer}>
           <ProductQuantityInput quantity={quantity} setQuantity={setQuantity} />
-          <ProductAddToCart quantity={quantity} setQuantity={setQuantity} />
+          <ProductAddToCart
+            product={product}
+            quantity={quantity}
+            setQuantity={setQuantity}
+          />
         </div>
       </div>
     </div>
