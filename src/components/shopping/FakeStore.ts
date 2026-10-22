@@ -31,7 +31,6 @@ export default function useFakeStoreProducts(): {
         const response = await fetch("https://fakestoreapi.com/products");
         if (!response.ok) throw new Error(`Failed to fetch ${response.status}`);
         const productsRaw: FakeStoreProductObjectType[] = await response.json();
-        console.log(productsRaw);
         if (!cancelled)
           setProducts(
             productsRaw.map((productRaw) => toProductType(productRaw)),
