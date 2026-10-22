@@ -6,7 +6,11 @@ import Logo from "./Logo";
 import { useTheme } from "../../context/ThemeContext";
 import { Link } from "react-router";
 
-export default function NavBar() {
+export default function NavBar({
+  cartItemCount = 0,
+}: {
+  cartItemCount?: number;
+}) {
   const { toggleTheme } = useTheme();
 
   return (
@@ -30,9 +34,12 @@ export default function NavBar() {
             </Link>
           </li>
           <li className={styles.navbarLinkItem}>
-            <Link aria-label="nav-cart-page" to="#">
-              <ShoppingCartSvg />
-            </Link>
+            <div className={styles.navbarCartLinkWrapper}>
+              <Link aria-label="nav-cart-page" to="#">
+                <ShoppingCartSvg />
+              </Link>
+              <p className={styles.navbarCartItemCount}>{cartItemCount}</p>
+            </div>
           </li>
         </ul>
       </nav>

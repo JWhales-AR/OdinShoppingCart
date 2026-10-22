@@ -7,7 +7,7 @@ import ThemeProvider from "../../context/ThemeProvider";
 function NavBarWrapper() {
   return (
     <ThemeProvider>
-      <NavBar />
+      <NavBar cartItemCount={0} />
     </ThemeProvider>
   );
 }
