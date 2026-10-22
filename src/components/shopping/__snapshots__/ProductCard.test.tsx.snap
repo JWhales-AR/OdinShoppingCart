@@ -3,73 +3,75 @@
 exports[`Product Card > matches the snapshot 1`] = `
 <div>
   <div>
-    <div
-      class="_productCard_e5e3e5"
-    >
+    <div>
       <div
-        class="_productDisplayContainer_e5e3e5"
+        class="_productCard_e5e3e5"
       >
-        <img
-          alt="Product Product Dummy Image"
-          class="_productImage_e5e3e5"
-          src="/src/assets/chandelier-pexels.jpg"
-        />
-        <p
-          class="_productCategory_e5e3e5"
-        >
-          Category Dummy
-        </p>
-      </div>
-      <div
-        class="_productAboutContainer_e5e3e5"
-      >
-        <p
-          class="_productAboutTitle_e5e3e5"
-        >
-          Product Dummy
-        </p>
-        <p
-          class="_productAboutDescription_e5e3e5"
-        >
-          Justo, laoreet sit amet cursus sit amet, dictum sit amet justo donecenim diam, vulputate ut. Blandit volutpat maecenas volutpat
-        </p>
-      </div>
-      <div
-        class="_productPriceCartContainer_e5e3e5"
-      >
-        <p>
-          $69,999.00
-        </p>
         <div
-          class="_productCartControlContainer_e5e3e5"
+          class="_productDisplayContainer_e5e3e5"
         >
-          <div
-            class="_productQuantityInputContainer_e5e3e5"
+          <img
+            alt="Product Product Dummy Image"
+            class="_productImage_e5e3e5"
+            src="/src/assets/chandelier-pexels.jpg"
+          />
+          <p
+            class="_productCategory_e5e3e5"
           >
-            <button
-              aria-label="cart-decrement"
-              class="_productQuantityDecrButton_e5e3e5"
+            Category Dummy
+          </p>
+        </div>
+        <div
+          class="_productAboutContainer_e5e3e5"
+        >
+          <p
+            class="_productAboutTitle_e5e3e5"
+          >
+            Product Dummy
+          </p>
+          <p
+            class="_productAboutDescription_e5e3e5"
+          >
+            Justo, laoreet sit amet cursus sit amet, dictum sit amet justo donecenim diam, vulputate ut. Blandit volutpat maecenas volutpat
+          </p>
+        </div>
+        <div
+          class="_productPriceCartContainer_e5e3e5"
+        >
+          <p>
+            $69,999.00
+          </p>
+          <div
+            class="_productCartControlContainer_e5e3e5"
+          >
+            <div
+              class="_productQuantityInputContainer_e5e3e5"
             >
-              -
-            </button>
-            <input
-              aria-label="product-quantity"
-              class="_productQuantityInput_e5e3e5"
-              type="text"
-              value="1"
-            />
+              <button
+                aria-label="cart-decrement"
+                class="_productQuantityDecrButton_e5e3e5"
+              >
+                -
+              </button>
+              <input
+                aria-label="product-quantity"
+                class="_productQuantityInput_e5e3e5"
+                type="text"
+                value="1"
+              />
+              <button
+                aria-label="cart-increment"
+                class="_productQuantityIncrButton_e5e3e5"
+              >
+                +
+              </button>
+            </div>
             <button
-              aria-label="cart-increment"
-              class="_productQuantityIncrButton_e5e3e5"
+              class="_addToCartButton_e5e3e5"
             >
-              +
+              Add to Cart
             </button>
           </div>
-          <button
-            class="_addToCartButton_e5e3e5"
-          >
-            Add to Cart
-          </button>
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
+import type { CartItemContextType } from "../../App";
+import { useOutletContext } from "react-router";
 
 type ProductQuantityProps = {
   quantity: number;
@@ -47,8 +49,19 @@ function ProductQuantityInput({ quantity, setQuantity }: ProductQuantityProps) {
   );
 }
 
-function ProductAddToCart() {
-  return <button className={styles.addToCartButton}>Add to Cart</button>;
+function ProductAddToCart({ quantity, setQuantity }: ProductQuantityProps) {
+  const { incrCartItemCount } = useOutletContext<CartItemContextType>();
+  return (
+    <button
+      className={styles.addToCartButton}
+      onClick={() => {
+        incrCartItemCount(quantity);
+        setQuantity(1);
+      }}
+    >
+      Add to Cart
+    </button>
+  );
 }
 
 export type ProductType = {
@@ -84,7 +97,7 @@ export default function ProductCard({ product }: { product: ProductType }) {
         <p>{formattedPrice}</p>
         <div className={styles.productCartControlContainer}>
           <ProductQuantityInput quantity={quantity} setQuantity={setQuantity} />
-          <ProductAddToCart />
+          <ProductAddToCart quantity={quantity} setQuantity={setQuantity} />
         </div>
       </div>
     </div>
