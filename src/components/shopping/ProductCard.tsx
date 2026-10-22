@@ -1,26 +1,23 @@
 import styles from "./Shopping.module.css";
 import ChandelierImg from "../../assets/chandelier-pexels.jpg";
-import {
-  useState,
-  type ChangeEventHandler,
-  type Dispatch,
-  type SetStateAction,
-} from "react";
+import { useState, type ChangeEventHandler } from "react";
 import type { CartItemContextType } from "../../App";
 import CartStorage from "../cart/CartStorage";
 import { useOutletContext } from "react-router";
 
 interface ProductQuantityProps {
   quantity: number;
-  setQuantity: Dispatch<SetStateAction<number>>;
+  setQuantity: (arg0: number) => void;
+  incrQuantity: (arg0: -1 | 1) => void;
 }
-function ProductQuantityInput({ quantity, setQuantity }: ProductQuantityProps) {
-  const fixNumber = (x: number) =>
-    isNaN(x) ? 1 : Math.max(1, Math.min(x, 999));
-
+export function ProductQuantityInput({
+  quantity,
+  setQuantity,
+  incrQuantity,
+}: ProductQuantityProps) {
   const handleChange: ChangeEventHandler = (e) => {
     const newValue = Number((e.target as HTMLTextAreaElement).value);
-    setQuantity(fixNumber(newValue));
+    setQuantity(newValue);
   };
 
   return (
@@ -28,7 +25,7 @@ function ProductQuantityInput({ quantity, setQuantity }: ProductQuantityProps) {
       <button
         aria-label="cart-decrement"
         className={styles.productQuantityDecrButton}
-        onClick={() => setQuantity((prev) => fixNumber(prev - 1))}
+        onClick={() => incrQuantity(-1)}
       >
         -
       </button>
@@ -42,7 +39,7 @@ function ProductQuantityInput({ quantity, setQuantity }: ProductQuantityProps) {
       <button
         aria-label="cart-increment"
         className={styles.productQuantityIncrButton}
-        onClick={() => setQuantity((prev) => fixNumber(prev + 1))}
+        onClick={() => incrQuantity(1)}
       >
         +
       </button>
@@ -87,7 +84,16 @@ export default function ProductCard({ product }: { product: ProductType }) {
     currency: "USD",
   }).format(product.price);
 
-  const [quantity, setQuantity] = useState<number>(1);
+  const fixNumber = (x: number) =>
+    isNaN(x) ? 1 : Math.max(1, Math.min(x, 999));
+
+  const [quantity, _setQuantity] = useState<number>(1);
+  const setQuantity = (num: number) => {
+    _setQuantity(fixNumber(num));
+  };
+  const incrQuantity = (incr: -1 | 1) => {
+    _setQuantity((prev) => fixNumber(prev + incr));
+  };
 
   return (
     <div className={styles.productCard}>
@@ -106,11 +112,16 @@ export default function ProductCard({ product }: { product: ProductType }) {
       <div className={styles.productPriceCartContainer}>
         <p>{formattedPrice}</p>
         <div className={styles.productCartControlContainer}>
-          <ProductQuantityInput quantity={quantity} setQuantity={setQuantity} />
+          <ProductQuantityInput
+            quantity={quantity}
+            setQuantity={setQuantity}
+            incrQuantity={incrQuantity}
+          />
           <ProductAddToCart
             product={product}
             quantity={quantity}
             setQuantity={setQuantity}
+            incrQuantity={incrQuantity}
           />
         </div>
       </div>
