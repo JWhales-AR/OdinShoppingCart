@@ -10,6 +10,11 @@
     padding: 1.5rem;
     background-color: var(--color-bg);
     color: var(--color-fg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 *[class*="dark"] .cart-pager {
@@ -19,4 +24,30 @@
     --color-fg-sub: hsl(var(--color-secondary-200));
     --color-fg-alter: hsl(var(--color-secondary-100));
     --color-shadow: var(--color-card-bg);
+}
+
+.cart-item-card {
+    background-color: var(--color-card-bg);
+    padding: 1.2rem;
+    width: 90%;
+    display: flex;
+    gap: 0.865rem;
+    align-items: start;
+    justify-content: space-between;
+    border-radius: 8pt;
+    box-shadow: 2pt 1pt 8pt -3pt var(--color-fg-alter);
+}
+
+.cart-item-card-buttons-container {
+    display: flex;
+    gap: 0.865rem;
+}
+
+button.remove-button {
+    border: none;
+    padding-block: 0.3rem;
+    padding-inline: 0.6rem;
+    border-radius: 4pt;
+    background-color: var(--color-fg-sub);
+    color: hsl(var(--color-primary-100));
 }
