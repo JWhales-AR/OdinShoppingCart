@@ -79,6 +79,7 @@ export default class CartStorage {
       if (increment) {
         productsInCart[productIndex].quantity += newProduct.quantity;
       } else {
+        console.log(newProduct);
         productsInCart[productIndex] = newProduct;
       }
     } else {
